@@ -11,28 +11,52 @@ namespace data_Access.Functions
     {
         public User SearchUser(long id)
         {
-            return ContextSingelton.Context.Users.First(user=> user.Id == id);
+            var Find = ContextSingelton.Context.Users.First(user => user.Id == id);
+            if (Find != null)
+                return Find;
+            else
+                throw new Exception("error user doesn't exist");
         }
         public Book SearchBook(long id)
         {
-            return ContextSingelton.Context.Books.First(book => book.Id == id);
+            var Find = ContextSingelton.Context.Books.First(book => book.Id == id);
+            if (Find != null)
+                return Find;
+            else
+                throw new Exception("error book doesn't exist");
         }
         public Comment SearchComment(long id)
         {
-            return ContextSingelton.Context.Comments.First(comment => comment.Id == id);
+            var Find = ContextSingelton.Context.Comments.First(comment => comment.Id == id);
+            if (Find != null)
+                return Find;
+            else
+                throw new Exception("error comment doesn't exist");
         }
         public Offer SearchOffer(long id)
         {
-            return ContextSingelton.Context.Offers.First(offer => offer.Id == id);
+            var Find = ContextSingelton.Context.Offers.First(offer => offer.Id == id);
+            if (Find != null)
+                return Find;
+            else
+                throw new Exception("error offer doesn't exist");
         }
 
         public Order SearchOrder(long id)
         {
-            return ContextSingelton.Context.Orders.First(order => order.Id == id);
+            var Find = ContextSingelton.Context.Orders.First(order => order.Id == id);
+            if (Find != null)
+                return Find;
+            else
+                throw new Exception("error order doesn't exist");
         }
         public Address SearchAddress(long id)
         {
-            return ContextSingelton.Context.Address.First(address => address.Id == id);
+            var Find = ContextSingelton.Context.Address.First(address => address.Id == id);
+            if (Find != null)
+                return Find;
+            else
+                throw new Exception("error address doesn't exist");
         }
 
     }
