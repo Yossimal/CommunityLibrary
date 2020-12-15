@@ -5,18 +5,18 @@ using System.Web;
 
 namespace data_Access.Models
 {
-    public enum refference
+    public enum Reference
     {
-        OFFER,
-        ORDER
+        Offer,
+        Order
     }
     public class Comment
     {
         public long Id { get; set; }
-        public long User_Id { get; set; }
-        public long Comment_Id { get; set; }
+        public long UserId { get; set; }
+        public long CommentId { get; set; }
         public int Rating { get; set; }
-        public refference Refference{ get; set; }
+        public Reference Reference{ get; set; }
         public string Content { get; set; }
     }
 }
