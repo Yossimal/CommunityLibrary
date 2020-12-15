@@ -10,7 +10,7 @@ namespace data_Access.Models
         public long Id { get; set; }
         public string Name { get; set; }
         public string Author { get; set; }
-        public long BarCode { get; set; }
+        public string BarCode { get; set; }
         public List<Order> OrdersList { get; set; }
         public List<Offer> OffersList { get; set; }
     }

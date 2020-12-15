@@ -9,9 +9,9 @@ namespace data_Access.Functions
 {
     public class Functions
     {
+        readonly DataContext dataContext = new DataContext();
         public void AddUser(User user)
         {
-            DataContext dataContext = new DataContext();
             if (Validator.AgeIsValid(user.BirthDate)
                 throw new Exception("error - Age isn't good");
             if (!(Validator.PasswordIsValid(user.Password)))
@@ -36,6 +36,26 @@ namespace data_Access.Functions
                 throw new Exception("id already exist if you would like to update press go back");
             }
         }
-        public void AddBook()
+        public void AddBook(Book book)
+        {
+            if (!Validator.NameIsValid(book.Name))
+                throw new Exception("error - Book's name isn't valid!");
+
+            if (!Validator.NameIsValid(book.Author))
+                throw new Exception("error - Book's author isn't valid!");
+
+            if (!Validator.BarCodeIsValid(book.BarCode))
+                throw new Exception("error - Book's barcode isn't valid!");
+
+            try
+            {
+                dataContext.Books.Add(book);
+                dataContext.SaveChanges();
+            }
+            catch (Exception e)
+            {
+                throw new Exception("error - Couln't add the book", e);
+            }
+        }
     }
 }

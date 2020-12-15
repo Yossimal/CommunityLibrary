@@ -7,7 +7,7 @@ namespace data_Access.Models
 {
     public class Address
     {
-        public int Id { get; set; }
+        public long Id { get; set; }
         public string Floor { get; set; }
         public string Apartment { get; set; }
         public string Enterance { get; set; }

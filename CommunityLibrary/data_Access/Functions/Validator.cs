@@ -9,7 +9,7 @@ using data_Access.Context;
 namespace data_Access.Functions
 {
     // C# code to validate a password 
-    class Validator
+    static class Validator
     {
         static DataContext dataContext = new DataContext();
 
@@ -146,6 +146,11 @@ namespace data_Access.Functions
         public static bool AgeIsValid(DateTime age)
         {
             return age < DateTime.Now.AddYears(-13);
+        }
+
+        public static bool BarCodeIsValid(string barCode)
+        {
+            throw new NotImplementedException();
         }
     }
 }
