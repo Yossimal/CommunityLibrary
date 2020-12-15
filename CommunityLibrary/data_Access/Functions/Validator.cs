@@ -128,8 +128,8 @@ namespace data_Access.Functions
 
         public static bool NameIsValid(string n)
         {
-            var regex = @"^[A-Za-z]+[\s][A-Za-z]+[.][A-Za-z]+$";
-            return (Regex.IsMatch(n, regex));
+            var regex = @"^[a-zA-Z\.]+[\s[a-zA-z\.]+]*$";
+            return (n!= "" && Regex.IsMatch(n, regex));
         }
 
         public static bool UsernameIsValid(string username)
