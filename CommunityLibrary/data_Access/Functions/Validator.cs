@@ -3,13 +3,15 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Text.RegularExpressions;
+using data_Access.Context;
+
 
 namespace data_Access.Functions
 {
-
     // C# code to validate a password 
     class Validator
     {
+        static DataContext dataContext = new DataContext();
 
         // A utility function to check 
         // whether a password is valid or not 
@@ -122,6 +124,28 @@ namespace data_Access.Functions
             var regex = @"^(?<countryCode>[\+][1-9]{1}[0-9]{0,2}\s)?(?<areaCode>0?[1-9]\d{0,4})(?<number>\s[1-9][\d]{5,12})(?<extension>\sx\d{0,4})?$";
 
             return (Regex.IsMatch(s, regex));
+        }
+
+        public static bool NameIsValid(string n)
+        {
+            var regex = @"^[A-Za-z]+[\s][A-Za-z]+[.][A-Za-z]+$";
+            return (Regex.IsMatch(n, regex));
+        }
+
+        public static bool UsernameIsValid(string username)
+        {
+            return dataContext.Users.Any(u => u.UserName == username);
+        }
+
+        public static bool MailIsValid(string mail)
+        {
+            var addr = new System.Net.Mail.MailAddress(mail);
+            return addr.Address == mail;
+        }
+
+        public static bool AgeIsValid(DateTime age)
+        {
+            return age < DateTime.Now.AddYears(-13);
         }
     }
 }

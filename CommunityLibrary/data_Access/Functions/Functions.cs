@@ -12,21 +12,20 @@ namespace data_Access.Functions
         public void AddUser(User user)
         {
             DataContext dataContext = new DataContext();
-            if (!(user.BirthDate < DateTime.Now.AddYears(-13)))
+            if (Validator.AgeIsValid(user.BirthDate)
                 throw new Exception("error - Age isn't good");
-
             if (!(Validator.PasswordIsValid(user.Password)))
                 throw new Exception("error - password isn't good");
-
-            var addr = new System.Net.Mail.MailAddress(user.EmailAddress);
-            if (!(addr.Address == user.EmailAddress))
+            if (Validator.MailIsValid(user.UserName))
                 throw new Exception("error -  Email address isn't good!");
-
-            if (!(Validator.PhoneIsValid(user.PhoneNumber)))
+            if (Validator.PhoneIsValid(user.PhoneNumber))
                 throw new Exception("error -  phone number address isn't good!");
-            if (dataContext.Users.Any(u => u.UserName == user.UserName))
+            if (Validator.PhoneIsValid(user.UserName))
                 throw new Exception("error -  phone number address isn't good!");
-
+            if(!Validator.NameIsValid(user.FirstName))
+                throw new Exception("error -  first name isn't good!");
+            if (!Validator.NameIsValid(user.LastName))
+                throw new Exception("error -  last name isn't good!");
             try
             {
                 dataContext.Users.Add(user);
