@@ -7,7 +7,7 @@ using data_Access.Models;
 
 namespace data_Access.Functions
 {
-    public class Request
+    public partial class Functions : DalApi
     {
         public User SearchUser(long id)
         {

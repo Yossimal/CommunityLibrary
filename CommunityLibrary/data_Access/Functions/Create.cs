@@ -7,7 +7,7 @@ using data_Access.Context;
 
 namespace data_Access.Functions
 {
-    public class Create
+    public partial class Functions:DalApi
     {
         public void AddUser(User user)
         {
@@ -27,22 +27,21 @@ namespace data_Access.Functions
                 throw new Exception("error -  last name isn't good!");
             try
             {
-                dataContext.Users.Add(user);
-                dataContext.SaveChanges();
+                ContextSingelton.Context.Users.Add(user);
+                ContextSingelton.Context.SaveChanges();
             }
             catch (Exception)
             {
                 throw new Exception("user already exist if you would like to update press go back");
             }
         }
-        public void AddBook();
 
         public void AddComment(Comment comment)
         {
             try
             {
-                dataContext.Comments.Add(comment);
-                dataContext.SaveChanges();
+                ContextSingelton.Context.Comments.Add(comment);
+                ContextSingelton.Context.SaveChanges();
             }
             catch (Exception)
             {
@@ -53,20 +52,20 @@ namespace data_Access.Functions
         {
             try
             {
-                dataContext.Offers.Add(offer);
-                dataContext.SaveChanges();
+                ContextSingelton.Context.Offers.Add(offer);
+                ContextSingelton.Context.SaveChanges();
             }
             catch (Exception)
             {
                 throw new Exception("offfer already exist if you would like to update press go back");
             }
         }
-        public void AddOrder(Offer order)
+        public void AddOrder(Order order)
         {
             try
             {
-                dataContext.Offers.Add(order);
-                dataContext.SaveChanges();
+                ContextSingelton.Context.Orders.Add(order);
+                ContextSingelton.Context.SaveChanges();
             }
             catch (Exception)
             {

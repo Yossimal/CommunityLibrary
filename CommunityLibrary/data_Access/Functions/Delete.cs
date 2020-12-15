@@ -7,32 +7,56 @@ using data_Access.Models;
 
 namespace data_Access.Functions
 {
-    public class Delete
+    public partial class Functions : DalApi
     {
         public void DeleteUser(long id)
         {
-            ContextSingelton.Context.Users.Remove(ContextSingelton.Context.Users.First(user => user.Id == id));
+            var Del = ContextSingelton.Context.Users.First(user => user.Id == id);
+            if (Del != null)
+                ContextSingelton.Context.Users.Remove(Del);
+            else
+                throw new Exception("error -  user doesn't exist");
         }
         public void DeleteBook(long id)
         {
-            ContextSingelton.Context.Books.Remove(ContextSingelton.Context.Books.First(book => book.Id == id));
+            var Del = ContextSingelton.Context.Books.First(book => book.Id == id);
+            if (Del != null)
+                ContextSingelton.Context.Books.Remove(Del);
+            else
+                throw new Exception("error -  book doesn't exist");
         }
         public void DeleteComment(long id)
         {
-            ContextSingelton.Context.Comments.Remove(ContextSingelton.Context.Comments.First(comment => comment.Id == id));
+            var Del = ContextSingelton.Context.Comments.First(comment => comment.Id == id);
+            if (Del != null)
+                ContextSingelton.Context.Comments.Remove(Del);
+            else
+                throw new Exception("error -  comment doesn't exist");
         }
         public void DeleteOffer(long id)
         {
-            ContextSingelton.Context.Offers.Remove(ContextSingelton.Context.Offers.First(offer => offer.Id == id));
+            var Del = ContextSingelton.Context.Offers.First(offer => offer.Id == id);
+            if (Del != null)
+                ContextSingelton.Context.Offers.Remove(Del);
+            else
+                throw new Exception("error -  offer doesn't exist");
         }
 
         public void DeleteOrder(long id)
         {
-            ContextSingelton.Context.Orders.Remove(ContextSingelton.Context.Orders.First(order => order.Id == id));
+            var Del = ContextSingelton.Context.Orders.First(order => order.Id == id);
+            if (Del != null)
+                ContextSingelton.Context.Orders.Remove(Del);
+            else
+                throw new Exception("error -  order doesn't exist");
         }
         public void DeleteAddress(long id)
         {
-            ContextSingelton.Context.Address.Remove(ContextSingelton.Context.Address.First(address => address.Id == id));
+            var Del = ContextSingelton.Context.Address.First(address => address.Id == id);
+            if (Del != null)
+                ContextSingelton.Context.Address.Remove(Del);
+            else
+                throw new Exception("error -  address doesn't exist");
         }
     }
 }

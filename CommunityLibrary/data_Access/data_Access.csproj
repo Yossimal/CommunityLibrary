@@ -101,7 +101,7 @@
     <Compile Include="Context\ContextSingelton.cs" />
     <Compile Include="Functions\Create.cs" />
     <Compile Include="Functions\Delete.cs" />
-    <Compile Include="Functions\Interface1.cs" />
+    <Compile Include="Functions\DalApi.cs" />
     <Compile Include="Functions\Request.cs" />
     <Compile Include="Functions\Update.cs" />
     <Compile Include="Functions\Validator.cs" />

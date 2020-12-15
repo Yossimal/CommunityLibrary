@@ -8,7 +8,7 @@ using data_Access.Models;
 
 namespace data_Access.Functions
 {
-    interface Interface1
+    interface DalApi
     {
         //USER FUNCTIONS
         void AddUser(User user);

@@ -8,13 +8,12 @@ using System.Data.Entity.Migrations;
 
 namespace data_Access.Functions
 {
-    public class Update
+    public partial class Functions : DalApi
     {
         public void UpdateUser(User user)
         {
-            /*bool find = */ContextSingelton.Context.Entry(user).CurrentValues.SetValues(user);
-            ContextSingelton.Context.Users.AddOrUpdate(u => u.Id == user.Id,user);
-            
+             ContextSingelton.Context.Entry(user).CurrentValues.SetValues(user);
+            ContextSingelton.Context.SaveChanges();
         }
         public Book UpdateBook(Book book)
         {
