@@ -2,16 +2,19 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
-using data_Access.Models;
 using data_Access.Context;
+using data_Access.Models;
+using System.Data.Entity.Migrations;
 
 namespace data_Access.Functions
 {
     public class Update
     {
-        public User UpdateUser(User user)
+        public void UpdateUser(User user)
         {
-            return ContextSingelton.Context.Users.Find(u => u.Id == id);
+            /*bool find = */ContextSingelton.Context.Entry(user).CurrentValues.SetValues(user);
+            ContextSingelton.Context.Users.AddOrUpdate(u => u.Id == user.Id,user);
+            
         }
         public Book UpdateBook(Book book)
         {
