@@ -12,29 +12,34 @@ namespace data_Access.Functions
     {
         public void UpdateUser(User user)
         {
-             ContextSingelton.Context.Entry(user).CurrentValues.SetValues(user);
+            ContextSingelton.Context.Entry(user).CurrentValues.SetValues(user);
             ContextSingelton.Context.SaveChanges();
         }
-        public Book UpdateBook(Book book)
+        public void UpdateBook(Book book)
         {
-            return ContextSingelton.Context.Books.First(book => book.Id == id);
+            ContextSingelton.Context.Entry(book).CurrentValues.SetValues(book);
+            ContextSingelton.Context.SaveChanges();
         }
-        public Comment SearchComment(long id)
+        public void SearchComment(Comment comment)
         {
-            return ContextSingelton.Context.Comments.First(comment => comment.Id == id);
+            ContextSingelton.Context.Entry(comment).CurrentValues.SetValues(comment);
+            ContextSingelton.Context.SaveChanges();
         }
-        public Offer SearchOffer(long id)
+        public void SearchOffer(Offer offer)
         {
-            return ContextSingelton.Context.Offers.First(offer => offer.Id == id);
+            ContextSingelton.Context.Entry(offer).CurrentValues.SetValues(offer);
+            ContextSingelton.Context.SaveChanges();
         }
 
-        public Order SearchOrder(long id)
+        public void SearchOrder(Order order)
         {
-            return ContextSingelton.Context.Orders.First(order => order.Id == id);
+            ContextSingelton.Context.Entry(order).CurrentValues.SetValues(order);
+            ContextSingelton.Context.SaveChanges();
         }
-        public Address SearchAddress(long id)
+        public void SearchAddress(Address address)
         {
-            return ContextSingelton.Context.Address.First(address => address.Id == id);
+            ContextSingelton.Context.Entry(address).CurrentValues.SetValues(address);
+            ContextSingelton.Context.SaveChanges();
         }
     }
 }
