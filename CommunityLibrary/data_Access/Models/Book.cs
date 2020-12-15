@@ -13,7 +13,5 @@ namespace data_Access.Models
         public long BarCode { get; set; }
         public List<Order> OrdersList { get; set; }
         public List<Offer> OffersList { get; set; }
-
-
     }
 }

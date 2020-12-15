@@ -16,7 +16,7 @@ namespace data_Access.Models
         public long UserId { get; set; }
         public long CommentId { get; set; }
         public int Rating { get; set; }
-        public Reference Reference{ get; set; }
+        public Reference Reference { get; set; }
         public string Content { get; set; }
     }
 }
