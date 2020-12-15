@@ -15,7 +15,6 @@ namespace data_Access.App_Code
         public DbSet<Order> Orders { get; set; }
         public DbSet<Book> Books { get; set; }
         public DbSet<Comment> Comments { get; set; }
-
         public DataContext():base()
         {
         }
