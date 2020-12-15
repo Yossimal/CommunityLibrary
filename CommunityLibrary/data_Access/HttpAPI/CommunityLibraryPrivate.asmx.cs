@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Services;
+using System.Web.UI.WebControls;
+using data_Access.Models;
 
 namespace data_Access.HttpAPI
 {
@@ -18,9 +20,10 @@ namespace data_Access.HttpAPI
     {
 
         [WebMethod]
-        public string CheckLogin(string key,string userName,string password)
+        public User CheckLogin(string key,string userName,string password)
         {
-            return "Hello World";
+            User ret = new User();
+            return ret;
         }
     }
 }
