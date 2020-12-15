@@ -21,7 +21,6 @@ namespace data_Access.Models
         public Roles Role { get; set; }
         public int AddressId { get; set; }
         public Address Address { get; set; }
-
         public enum Roles { Basic, Premium, Administrator }
     }
 }

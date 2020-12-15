@@ -99,6 +99,7 @@
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Context\DataContext.cs" />
     <Compile Include="Functions\Functions.cs" />
+    <Compile Include="Functions\Validator.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
