@@ -96,8 +96,8 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Context\DataContext.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Context\DataContext.cs" />
     <Compile Include="Functions\Functions.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
