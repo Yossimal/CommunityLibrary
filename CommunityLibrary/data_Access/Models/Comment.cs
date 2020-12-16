@@ -15,9 +15,12 @@ namespace data_Access.Models
         public long Id { get; set; }
         public long UserId { get; set; }
         public User User { get; set; }
-        public long CommentId { get; set; }
+        public long OfferId { get; set; }
+        public long OrderId { get; set; }
         public int Rating { get; set; }
         public Reference Reference { get; set; }
+        public Offer Offer { get; set; }
+        public Order Order { get; set; }
         public string Content { get; set; }
     }
 }
