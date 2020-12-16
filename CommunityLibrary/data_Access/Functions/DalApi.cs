@@ -12,14 +12,45 @@ namespace data_Access.Functions
     {
         //USER FUNCTIONS
         void AddUser(User user);
-        User SearchUser(long id)
+        User SearchUser(long id);
+        void UpdateUser(User user);
+        void DeleteUser(long id);
+        
 
-        void AddAddress(User user);
-        void AddBook(User user);
-        void AddComment(User user);
-        void AddOffer(User user);
-        void AddOrder(User user);
+        //ADDRESS FUNCTIONS
+        void AddAddress(Address address);
+        Address SearchAddress(long id);
+        void UpdateAddress(Address address);
+        void DeleteAddress(long id);
 
 
+        //BOOK FUNCTIONS
+        void AddBook(Book book);
+        Book SearchBook(long id);
+        void UpdateBook(Book book);
+        void DeleteBook(long id);
+
+
+        //COMMENT FUNCTIONS
+        void AddComment(Comment comment);
+        Comment SearchComment(long id);
+        void UpdateComment(Comment comment);
+        void DeleteComment(long id);
+
+
+        //OFFER FUNCTIONS
+        void AddOffer(Offer offer);
+        Offer SearchOffer(long id);
+        void UpdateOffer(Offer offer);
+        void DeleteOffer(long id);
+
+
+        //ORDER FUNCTIOS
+        void AddOrder(Order order);
+        Order SearchOrder(long id);
+        void UpdateOrder(Order order);
+        void DeleteOrder(long id);
+
+        
     }
 }
