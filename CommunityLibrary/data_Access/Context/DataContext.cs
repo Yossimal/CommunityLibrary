@@ -18,7 +18,7 @@ namespace data_Access.Context
 
         public DataContext()
         {
-
+            
         }
     }
 }
