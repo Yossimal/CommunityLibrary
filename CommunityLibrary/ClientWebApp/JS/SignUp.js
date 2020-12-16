@@ -27,11 +27,11 @@ $("#signUp").click(() => {
 
     if (data.password != $("#password2").val()) return;
 
-    let jsonData = JSON.stringify(data);
+   // let jsonData = JSON.stringify(data);
 
     POST(
         "https://localhost:44333/HttpAPI/CommunityLibraryPrivate.asmx/AddUser",
-        jsonData,
+        data,
         (data) => { alert('success: ' + data) },
         () => { alert('error') }
     )
