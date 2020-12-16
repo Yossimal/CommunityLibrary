@@ -103,7 +103,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Context\Config\BooksConfig.cs" />
     <Compile Include="Context\Config\OfferConfig.cs" />
+    <Compile Include="Context\Config\OrderConfig.cs" />
     <Compile Include="Context\Config\UserConfig.cs" />
     <Compile Include="Context\DataContext.cs" />
     <Compile Include="Context\ContextSingelton.cs" />
@@ -127,6 +129,10 @@
     <Compile Include="Migrations\202012161226346_RemoveFloorFromAdressAndAddUserListToAddress.cs" />
     <Compile Include="Migrations\202012161226346_RemoveFloorFromAdressAndAddUserListToAddress.designer.cs">
       <DependentUpon>202012161226346_RemoveFloorFromAdressAndAddUserListToAddress.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202012161320394_ModifyOrdersAndMore.cs" />
+    <Compile Include="Migrations\202012161320394_ModifyOrdersAndMore.designer.cs">
+      <DependentUpon>202012161320394_ModifyOrdersAndMore.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Address.cs" />
@@ -162,6 +168,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202012161226346_RemoveFloorFromAdressAndAddUserListToAddress.resx">
       <DependentUpon>202012161226346_RemoveFloorFromAdressAndAddUserListToAddress.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202012161320394_ModifyOrdersAndMore.resx">
+      <DependentUpon>202012161320394_ModifyOrdersAndMore.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

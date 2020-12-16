@@ -16,5 +16,6 @@ namespace data_Access.Models
         public int DaysForGive { get; set; }
         public int DaysForReturn { get; set; }
         public List<Comment> Comments { get; set; }
+        public List<Order> Orders { get; set; }
     }
 }
