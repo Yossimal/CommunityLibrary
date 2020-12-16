@@ -59,5 +59,10 @@ namespace data_Access.Functions
         {
             return ContextSingelton.Context.Offers.First(O => O.Id == id).Book;
         }
+
+        ICollection<User> DalApi.GetAllUsers(Func<User, bool> predicate)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
