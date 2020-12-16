@@ -60,8 +60,19 @@ namespace data_Access.HttpAPI
 
             data.AddUser(user);
             return "fail";
+            try
+            {
+                data.AddUser(user);
+                return "ok";
+            }
+            catch(Exception ex)
+            {
+                return ex.Message;
+               
+            }
         }
 
+        
 
     }
 }

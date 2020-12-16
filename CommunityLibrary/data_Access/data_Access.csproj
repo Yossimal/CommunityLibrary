@@ -103,6 +103,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Context\Config\OfferConfig.cs" />
+    <Compile Include="Context\Config\UserConfig.cs" />
     <Compile Include="Context\DataContext.cs" />
     <Compile Include="Context\ContextSingelton.cs" />
     <Compile Include="Controllers\Test.cs" />
@@ -121,6 +123,10 @@
     <Compile Include="Migrations\202012161137107_initialDB.cs" />
     <Compile Include="Migrations\202012161137107_initialDB.designer.cs">
       <DependentUpon>202012161137107_initialDB.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202012161226346_RemoveFloorFromAdressAndAddUserListToAddress.cs" />
+    <Compile Include="Migrations\202012161226346_RemoveFloorFromAdressAndAddUserListToAddress.designer.cs">
+      <DependentUpon>202012161226346_RemoveFloorFromAdressAndAddUserListToAddress.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Address.cs" />
@@ -153,6 +159,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\202012161137107_initialDB.resx">
       <DependentUpon>202012161137107_initialDB.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202012161226346_RemoveFloorFromAdressAndAddUserListToAddress.resx">
+      <DependentUpon>202012161226346_RemoveFloorFromAdressAndAddUserListToAddress.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
