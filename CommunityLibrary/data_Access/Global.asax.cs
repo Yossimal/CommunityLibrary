@@ -20,6 +20,8 @@ namespace data_Access
 
             // enable CORS  
             response.AddHeader("Access-Control-Allow-Origin", "*");
+            response.AddHeader("Access-Control-Allow-Headers", "*");
+
 
             if (context.Request.HttpMethod == "OPTIONS")
             {

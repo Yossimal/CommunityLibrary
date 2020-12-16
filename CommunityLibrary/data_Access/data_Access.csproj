@@ -98,7 +98,33 @@
       <DependentUpon>DataBase.mdf</DependentUpon>
     </Content>
     <Content Include="Global.asax" />
+    <Content Include="HTML\AddAndUpdateBook.html" />
+    <Content Include="HTML\BookInfo.html" />
+    <Content Include="HTML\BooksMap.html" />
+    <Content Include="HTML\HtmlPageSigninSignup.html" />
+    <Content Include="HTML\images\home.png" />
+    <Content Include="HTML\images\signIn.png" />
+    <Content Include="HTML\images\signUp.png" />
+    <Content Include="HTML\Profile.html" />
+    <Content Include="HTML\SignUp.html" />
+    <Content Include="HTML\UserSpace.html" />
     <Content Include="HttpAPI\CommunityLibraryPrivate.asmx" />
+    <Content Include="JS\AJAXCalls.js" />
+    <Content Include="JS\JQuery.js" />
+    <Content Include="JS\SignUp.js" />
+    <Content Include="views\HTML\AddAndUpdateBook.html" />
+    <Content Include="views\HTML\BookInfo.html" />
+    <Content Include="views\HTML\BooksMap.html" />
+    <Content Include="views\HTML\HtmlPageSigninSignup.html" />
+    <Content Include="views\HTML\images\home.png" />
+    <Content Include="views\HTML\images\signIn.png" />
+    <Content Include="views\HTML\images\signUp.png" />
+    <Content Include="views\HTML\Profile.html" />
+    <Content Include="views\HTML\SignUp.html" />
+    <Content Include="views\HTML\UserSpace.html" />
+    <Content Include="views\JS\AJAXCalls.js" />
+    <Content Include="views\JS\JQuery.js" />
+    <Content Include="views\JS\SignUp.js" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>

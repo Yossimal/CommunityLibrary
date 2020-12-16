@@ -16,7 +16,7 @@ namespace data_Access.HttpAPI
     /// <summary>
     /// Summary description for CommunityLibraryPrivate
     /// </summary>
-    [EnableCors(origins: "https://localhost:44300/", headers: "*", methods: "*")]
+    [EnableCors(origins: "*", headers: "*", methods: "*")]
     [WebService(Namespace = "http://tempuri.org/")]
     [WebServiceBinding(ConformsTo = WsiProfiles.BasicProfile1_1)]
     [System.ComponentModel.ToolboxItem(false)]
@@ -48,7 +48,7 @@ namespace data_Access.HttpAPI
             user.Password = password;
             user.FirstName = firstName;
             user.LastName = lastName;
-            user.BirthDate = new DateTime(dayBirth,monthBirth,yearBirth);
+            user.BirthDate = new DateTime(yearBirth,monthBirth,dayBirth);
             user.EmailAddress = emailAddress;
             user.PhoneNumber = phoneNumber;
             Address address = new Address();

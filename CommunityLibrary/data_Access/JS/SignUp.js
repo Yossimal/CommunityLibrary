@@ -7,13 +7,13 @@ $("#signUp").click(() => {
 
     let data = {
         userName: $("#userName").val(),
-        password: $("#password1").val(),
+        password1: $("#password1").val(),
         firstName: $("#firstName").val(),
         lastName: $("#lastName").val(),
         dayBirth: birthDate.getDate(),
         monthBirth: birthDate.getMonth() + 1,
         yearBirth: birthDate.getFullYear(),
-        emailAddress: $("#email").val(),
+        email: $("#email").val(),
         phone: $("#phoneNumber").val(),
         apartmentNumber: $("#apartmentNumber").val(),
         enterance: $("#enterance").val(),
@@ -25,10 +25,13 @@ $("#signUp").click(() => {
         street: $("#streetAddress").val(),
     }
 
-    if (data.password != $("#password2").val()) return;
+    if (data.password1 != $("#password2").val()) return;
+
+    let jsonData = JSON.stringify(data);
+
     POST(
         'AddUser',
-        data,
+        jsonData,
         (data) => { alert('success: ' + data) },
         () => { alert('error') }
     )
