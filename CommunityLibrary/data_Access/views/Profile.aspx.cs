@@ -13,7 +13,7 @@ namespace data_Access.views
         private Functions.Functions func = new Functions.Functions();
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (long.TryParse(Request.Form["User"], out long id))
+            if (long.TryParse(Request.Form["user-id"], out long id))
             {
                 try
                 {
