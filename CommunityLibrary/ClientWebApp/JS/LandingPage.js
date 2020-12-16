@@ -12,13 +12,14 @@ $("#signIn").click(() => {
         password: $("#Password").val(),
     }
 
-    if (!data.userName || !data.password) return;
-
-    let jsonData = JSON.stringify(data);
+    if (!data.userName.trim() || !data.password.trim()) {
+        alert ("please enter username and password")
+        return;
+    }
 
     POST(
         "https://localhost:44333/HttpAPI/CommunityLibraryPrivate.asmx/CheckLogin",
-        jsonData,
+        data,
         (s) => { alert("success " + s) },
         () => { alert("error signing in") }
     )
