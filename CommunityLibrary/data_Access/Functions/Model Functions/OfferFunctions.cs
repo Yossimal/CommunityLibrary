@@ -55,26 +55,9 @@ namespace data_Access.Functions
             else
                 throw new Exception("error -  offer doesn't exist");
         }
-        public Book GetBookOffers(long id) { throw new NotImplementedException(); }
-
-        public ICollection<Offer> GetAllComments(Func<Comment, bool> predicate = null)
-        {
-            throw new NotImplementedException();
-        }
-
         public Book GetOfferBook(long id)
         {
-            throw new NotImplementedException();
-        }
-
-        void DalApi.DeleteOrder(long id)
-        {
-            throw new NotImplementedException();
-        }
-
-        Book DalApi.GetOrderBook(long id)
-        {
-            throw new NotImplementedException();
+            return ContextSingelton.Context.Offers.First(O => O.Id == id).Book;
         }
     }
 }
