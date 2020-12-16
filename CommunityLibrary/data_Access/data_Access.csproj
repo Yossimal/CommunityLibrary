@@ -118,6 +118,11 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202012161137107_initialDB.cs" />
+    <Compile Include="Migrations\202012161137107_initialDB.designer.cs">
+      <DependentUpon>202012161137107_initialDB.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Address.cs" />
     <Compile Include="HttpAPI\CommunityLibraryPrivate.asmx.cs">
       <DependentUpon>CommunityLibraryPrivate.asmx</DependentUpon>
@@ -144,6 +149,11 @@
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\202012161137107_initialDB.resx">
+      <DependentUpon>202012161137107_initialDB.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

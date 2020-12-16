@@ -9,6 +9,7 @@ using System.Web.UI.WebControls;
 using data_Access.Models;
 using System.Web.Script.Services;
 using data_Access.Functions;
+using Microsoft.SqlServer.Server;
 
 namespace data_Access.HttpAPI
 {
@@ -26,24 +27,22 @@ namespace data_Access.HttpAPI
         private DalApi data=new Functions.Functions();
         [WebMethod]
         [ScriptMethod(ResponseFormat = ResponseFormat.Json)]
-        public User CheckLogin(string key,string userName,string password)
+        public User CheckLogin(string userName,string password)
         {
-            User ret=new User();
-           
-            return ret;
+            return data.Authiticate(userName,password);
         }
         [WebMethod]
         [ScriptMethod(ResponseFormat = ResponseFormat.Json)]
         public User GetUser(int id)
         {
-            
             return data.SearchUser(id);
         }
 
         [WebMethod]
         [ScriptMethod(ResponseFormat = ResponseFormat.Json)]
-        public string AddUser()
+        public string AddUser(User user)
         {
+            data.AddUser(user);
             return "fail";
         }
 
