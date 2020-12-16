@@ -14,9 +14,11 @@ $("#signIn").click(() => {
 
     if (!data.userName || !data.password) return;
 
+    let jsonData = JSON.stringify(data);
+
     POST(
         "https://localhost:44333/HttpAPI/CommunityLibraryPrivate.asmx/CheckLogin",
-        data,
+        jsonData,
         (s) => { alert("success " + s) },
         () => { alert("error signing in") }
     )
