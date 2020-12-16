@@ -512,5 +512,180 @@ namespace data_Access.HttpAPI
                 return ex.Message;
             }
         }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        [WebMethod]
+        [ScriptMethod(ResponseFormat = ResponseFormat.Json)]
+        public List<User> GetAllUsers(long id)
+        {
+            try
+            {
+                return data.GetAllUsers().ToList();
+            }
+            catch 
+            {
+                return null;
+            }
+        }
+
+        [WebMethod]
+        [ScriptMethod(ResponseFormat = ResponseFormat.Json)]
+        public List<Offer> GetUserOffers(long id)
+        {
+            try
+            {
+                return data.GetUserOffers(id).ToList();
+            }
+            catch
+            {
+                return null;
+            }
+        }
+
+        [WebMethod]
+        [ScriptMethod(ResponseFormat = ResponseFormat.Json)]
+        public List<Order> GetUserOrders(long id)
+        {
+            try
+            {
+                return data.GetUserOrders(id).ToList();
+            }
+            catch
+            {
+                return null;
+            }
+        }
+
+        [WebMethod]
+        [ScriptMethod(ResponseFormat = ResponseFormat.Json)]
+        public List<Comment> GetUserComments(long id)
+        {
+            try
+            {
+                return data.GetUserComments(id).ToList();
+            }
+            catch
+            {
+                return null;
+            }
+        }
+
+
+        [WebMethod]
+        [ScriptMethod(ResponseFormat = ResponseFormat.Json)]
+        public List<Book> GetUserBooks(long id)
+        {
+            try
+            {
+                return data.GetUserBooks(id).ToList();
+            }
+            catch
+            {
+                return null;
+            }
+        }
+
+        [WebMethod]
+        [ScriptMethod(ResponseFormat = ResponseFormat.Json)]
+        public Address GetUserAddress(long id)
+        {
+            try
+            {
+                return data.GetUserAddress(id);
+            }
+            catch
+            {
+                return null;
+            }
+        }
+
+        [WebMethod]
+        [ScriptMethod(ResponseFormat = ResponseFormat.Json)]
+        public List<Book> GetAllBooks(long id)
+        {
+            try
+            {
+                return data.GetAllBooks().ToList();
+            }
+            catch
+            {
+                return null;
+            }
+        }
+
+        [WebMethod]
+        [ScriptMethod(ResponseFormat = ResponseFormat.Json)]
+        public List<Offer> GetBookOffers(long id)
+        {
+            try
+            {
+                return data.GetBookOffers(id).ToList();
+            }
+            catch
+            {
+                return null;
+            }
+        }
+
+        [WebMethod]
+        [ScriptMethod(ResponseFormat = ResponseFormat.Json)]
+        public List<Order> GetBookOrders(long id)
+        {
+            try
+            {
+                return data.GetBookOrders(id).ToList();
+            }
+            catch
+            {
+                return null;
+            }
+        }
+
+
+        [WebMethod]
+        [ScriptMethod(ResponseFormat = ResponseFormat.Json)]
+        public List<Comment> GetAllComments(long id)
+        {
+            try
+            {
+                return data.GetAllComments().ToList();
+            }
+            catch
+            {
+                return null;
+            }
+        }
+
+        [WebMethod]
+        [ScriptMethod(ResponseFormat = ResponseFormat.Json)]
+        public Book GetOfferBook(long id)
+        {
+            try
+            {
+                return data.GetOfferBook(id);
+            }
+            catch
+            {
+                return null;
+            }
+        }
     }
 }
