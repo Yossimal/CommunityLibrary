@@ -14,21 +14,24 @@ $("#signUp").click(() => {
         monthBirth: birthDate.getMonth() + 1,
         yearBirth: birthDate.getFullYear(),
         emailAddress: $("#email").val(),
-        phone: $("#phoneNumber").val(),
-        apartmentNumber: $("#apartmentNumber").val(),
+        phoneNumber: $("#phoneNumber").val(),
+        apartment: $("#apartmentNumber").val(),
         enterance: $("#enterance").val(),
         houseNumber: $("#houseNumber").val(),
         city: $("#city").val(),
         state: $("#state").val(),
-        zip: $("#zip").val(),
+        zipCode: $("#zip").val(),
         country: $("#country").val(),
-        street: $("#streetAddress").val(),
+        streetAddress: $("#streetAddress").val(),
     }
 
     if (data.password != $("#password2").val()) return;
+
+    let jsonData = JSON.stringify(data);
+
     POST(
-        'AddUser',
-        data,
+        "https://localhost:44333/HttpAPI/CommunityLibraryPrivate.asmx/AddUser",
+        jsonData,
         (data) => { alert('success: ' + data) },
         () => { alert('error') }
     )

@@ -69,13 +69,14 @@
   <ItemGroup>
     <Content Include="Global.asax" />
     <Content Include="JS\AJAXCalls.js" />
+    <Content Include="JS\LandingPage.js" />
     <Content Include="JS\SignUp.js" />
     <Content Include="JS\JQuery.js" />
     <Content Include="tests\test.html" />
     <Content Include="tests\test.js" />
     <Content Include="HTML\AddAndUpdateBook.html" />
     <Content Include="HTML\BookInfo.html" />
-    <Content Include="HTML\HtmlPageSigninSignup.html" />
+    <Content Include="HTML\LandingPage.html" />
     <Content Include="HTML\images\home.png" />
     <Content Include="HTML\images\signIn.png" />
     <Content Include="HTML\images\signUp.png" />
