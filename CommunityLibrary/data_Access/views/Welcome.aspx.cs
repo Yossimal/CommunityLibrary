@@ -32,7 +32,7 @@ namespace data_Access.views
 
         protected void signUp_Click(object sender, EventArgs e)
         {
-            Response.Redirect("Login.aspx");
+            Response.Redirect("SignUp.aspx");
         }
 
         protected void discover_Click(object sender, EventArgs e)
