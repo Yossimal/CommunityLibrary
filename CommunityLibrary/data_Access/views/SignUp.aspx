@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="SignUp.aspx.cs" Inherits="data_Access.views.Login" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="SignUp.aspx.cs" Inherits="data_Access.views.SignUp" %>
 
 <!DOCTYPE html>
 
@@ -18,7 +18,7 @@
         <label>
         <br />
         Password</label>
-        <asp:TextBox ID="password" runat="server"></asp:TextBox>
+        <asp:TextBox ID="password" runat="server" TextMode="Password"></asp:TextBox>
         <label>
         <br />
         Password Again</label>

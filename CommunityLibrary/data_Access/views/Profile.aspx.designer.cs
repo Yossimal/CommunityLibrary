@@ -11,7 +11,7 @@ namespace data_Access.views
 {
 
 
-    public partial class SignUp
+    public partial class Profile
     {
 
         /// <summary>
@@ -33,15 +33,6 @@ namespace data_Access.views
         protected global::System.Web.UI.WebControls.TextBox userName;
 
         /// <summary>
-        /// email control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox email;
-
-        /// <summary>
         /// password control.
         /// </summary>
         /// <remarks>
@@ -49,15 +40,6 @@ namespace data_Access.views
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox password;
-
-        /// <summary>
-        /// checkPassword control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox checkPassword;
 
         /// <summary>
         /// firstName control.
@@ -76,15 +58,6 @@ namespace data_Access.views
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox lastName;
-
-        /// <summary>
-        /// bitrthDate control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox bitrthDate;
 
         /// <summary>
         /// phoneNumber control.
@@ -150,13 +123,13 @@ namespace data_Access.views
         protected global::System.Web.UI.WebControls.TextBox houseNumber;
 
         /// <summary>
-        /// Enterance control.
+        /// enterance control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox Enterance;
+        protected global::System.Web.UI.WebControls.TextBox enterance;
 
         /// <summary>
         /// apartmentNumber control.
@@ -168,12 +141,30 @@ namespace data_Access.views
         protected global::System.Web.UI.WebControls.TextBox apartmentNumber;
 
         /// <summary>
-        /// Send control.
+        /// lendingCount control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Send;
+        protected global::System.Web.UI.WebControls.Label lendingCount;
+
+        /// <summary>
+        /// role control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label role;
+
+        /// <summary>
+        /// update control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button update;
     }
 }

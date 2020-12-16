@@ -11,7 +11,7 @@ namespace data_Access.views
 {
 
 
-    public partial class WebForm1
+    public partial class Welcome
     {
 
         /// <summary>

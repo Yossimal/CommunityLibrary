@@ -8,7 +8,7 @@ using System.Web.UI.WebControls;
 
 namespace data_Access.views
 {
-    public partial class WebForm1 : System.Web.UI.Page
+    public partial class Welcome : System.Web.UI.Page
     {
         private Functions.Functions func = new Functions.Functions();
         protected void Page_Load(object sender, EventArgs e)

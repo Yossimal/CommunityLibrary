@@ -9,7 +9,7 @@ using data_Access.Models;
 
 namespace data_Access.views
 {
-    public partial class Login : System.Web.UI.Page
+    public partial class SignUp : System.Web.UI.Page
     {
         private Functions.Functions func=new Functions.Functions();
         protected void Page_Load(object sender, EventArgs e)

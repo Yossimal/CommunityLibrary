@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" MasterPageFile="MainMaster.Master" CodeBehind="Welcome.aspx.cs" Inherits="data_Access.views.WebForm1" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" MasterPageFile="MainMaster.Master" CodeBehind="Welcome.aspx.cs" Inherits="data_Access.views.Welcome" %>
 
 <asp:Content ContentPlaceHolderID="Body" runat="server">
     <div class="col-lg-12">
