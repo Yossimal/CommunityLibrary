@@ -76,5 +76,10 @@ namespace data_Access.Functions
         {
             throw new NotImplementedException();
         }
+
+        ICollection<User> DalApi.GetAllUsers(Func<User, bool> predicate)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
