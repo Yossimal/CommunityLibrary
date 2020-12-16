@@ -15,7 +15,7 @@ namespace data_Access.Functions
 
         // A utility function to check 
         // whether a password is valid or not 
-        public static bool PasswordIsValid(String password)
+        public static bool PasswordIsValid(string password)
         {
 
             // for checking if password length 
@@ -118,7 +118,7 @@ namespace data_Access.Functions
             // if all conditions fails 
             return true;
         }
-        public static bool PhoneIsValid(String s)
+        public static bool PhoneIsValid(string s)
         {
 
             var regex = @"^(?<countryCode>[\+][1-9]{1}[0-9]{0,2}\s)?(?<areaCode>0?[1-9]\d{0,4})(?<number>\s[1-9][\d]{5,12})(?<extension>\sx\d{0,4})?$";
@@ -126,10 +126,14 @@ namespace data_Access.Functions
             return (Regex.IsMatch(s, regex));
         }
 
-        public static bool NameIsValid(string n)
+        public static bool NameIsValid(string name)
         {
-            var regex = @"^[a-zA-Z\.]+[\s[a-zA-z\.]+]*$";
-            return (n!= "" && Regex.IsMatch(n, regex));
+            return !string.IsNullOrEmpty(name);
+        }
+
+        public static bool ContnetIsValid(string content)
+        {
+            return !string.IsNullOrEmpty(content);
         }
 
         public static bool UsernameIsValid(string username)
@@ -151,6 +155,16 @@ namespace data_Access.Functions
         public static bool BarCodeIsValid(string barCode)
         {
             throw new NotImplementedException();
+        }
+
+        public static void TrimObject(object obj)
+        {
+            foreach (var prop in obj.GetType().GetProperties())
+            {
+                var str = prop.GetValue(obj) as string;
+
+                if (str != null) prop.SetValue(obj, str.Trim());
+            }
         }
     }
 }
