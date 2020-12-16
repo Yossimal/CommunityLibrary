@@ -37,7 +37,7 @@ namespace data_Access.views
 
         protected void discover_Click(object sender, EventArgs e)
         {
-
+            Response.Redirect("Discover.aspx");
         }
     }
 }

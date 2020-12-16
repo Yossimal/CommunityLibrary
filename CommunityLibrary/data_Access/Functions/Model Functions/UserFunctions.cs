@@ -58,7 +58,14 @@ namespace data_Access.Functions
         }
         public User Authentication(string userName, string password) 
         {
-            return ContextSingelton.Context.Users.First(u => u.UserName == userName && u.Password == password);
+            User user = ContextSingelton.Context.Users.First(u => u.UserName == userName && u.Password == password);
+
+            if (user == null)
+            {
+                throw new Exception("error - Could't not find a user with this username and password");
+            }
+
+            return user;
         }
         public ICollection<User> GetAllUsers(Func<User, bool> predicate = null) 
         {
