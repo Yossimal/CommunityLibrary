@@ -21,7 +21,8 @@ namespace data_Access.views
             try
             {
                 User user = func.Authentication(userName.Text, password.Text);
-                signIn.Text = "Successfully signed in";
+                Session["user-id"] = user.Id.ToString();
+                Response.Redirect("Profile.aspx");
             }
             catch (Exception)
             {
