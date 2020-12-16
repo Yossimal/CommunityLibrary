@@ -99,11 +99,13 @@
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Context\DataContext.cs" />
     <Compile Include="Context\ContextSingelton.cs" />
-    <Compile Include="Functions\Create.cs" />
-    <Compile Include="Functions\Delete.cs" />
+    <Compile Include="Functions\Model Functions\AddressFunctions.cs" />
+    <Compile Include="Functions\Model Functions\BookFunctions.cs" />
+    <Compile Include="Functions\Model Functions\CommentFunctions.cs" />
     <Compile Include="Functions\DalApi.cs" />
-    <Compile Include="Functions\Request.cs" />
-    <Compile Include="Functions\Update.cs" />
+    <Compile Include="Functions\Model Functions\OfferFunctions.cs" />
+    <Compile Include="Functions\Model Functions\OrderFunctions.cs" />
+    <Compile Include="Functions\Model Functions\UserFunctions.cs" />
     <Compile Include="Functions\Validator.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>

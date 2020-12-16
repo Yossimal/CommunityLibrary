@@ -15,7 +15,15 @@ namespace data_Access.Functions
         User SearchUser(long id);
         void UpdateUser(User user);
         void DeleteUser(long id);
-        
+        User Authiticate(User user, string password);
+        ICollection<Offer> GetAllUsers(Func<User, bool> predicate = null);
+        ICollection<Offer> GetUserOffers(long id, Func<Offer, bool> predicate = null/*float km = float.MaxValue*/);
+        ICollection<Order> GetUserOrders(long id, Func<Order, bool> predicate = null/*float km = float.MaxValue*/);
+        ICollection<Comment> GetUserComments(long id, Func<Comment, bool> predicate = null/*float rating = 0*/);
+        ICollection<Book> GetUserBooks(long id, Func<Book, bool> predicate = null);
+        Address GetUserAddress(long id);
+
+
 
         //ADDRESS FUNCTIONS
         void AddAddress(Address address);
@@ -24,11 +32,16 @@ namespace data_Access.Functions
         void DeleteAddress(long id);
 
 
+
         //BOOK FUNCTIONS
         void AddBook(Book book);
         Book SearchBook(long id);
         void UpdateBook(Book book);
         void DeleteBook(long id);
+        ICollection<Offer> GetAllBooks(Func<Book, bool> predicate = null);
+        ICollection<Offer> GetBookOffers(long id, Func<Offer, bool> predicate = null/*float km = float.MaxValue*/);
+        ICollection<Order> GetBookOrders(long id, Func<Order, bool> predicate = null/*float km = float.MaxValue*/);
+
 
 
         //COMMENT FUNCTIONS
@@ -36,6 +49,8 @@ namespace data_Access.Functions
         Comment SearchComment(long id);
         void UpdateComment(Comment comment);
         void DeleteComment(long id);
+        ICollection<Offer> GetAllComments(Func<Comment, bool> predicate = null);
+
 
 
         //OFFER FUNCTIONS
@@ -43,6 +58,7 @@ namespace data_Access.Functions
         Offer SearchOffer(long id);
         void UpdateOffer(Offer offer);
         void DeleteOffer(long id);
+        Book GetOfferBook(long id);
 
 
         //ORDER FUNCTIOS
@@ -50,7 +66,7 @@ namespace data_Access.Functions
         Order SearchOrder(long id);
         void UpdateOrder(Order order);
         void DeleteOrder(long id);
-
+        Book GetOrderBook(long id);
         
     }
 }
