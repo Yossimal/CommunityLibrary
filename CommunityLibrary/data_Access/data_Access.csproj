@@ -116,6 +116,7 @@
     <Content Include="views\JS\AJAXCalls.js" />
     <Content Include="views\JS\JQuery.js" />
     <Content Include="views\JS\SignUp.js" />
+    <Content Include="views\MyBooks.aspx" />
     <Content Include="views\OfferBook.aspx" />
     <Content Include="views\SearchBook.aspx" />
     <Content Include="views\SignUp.aspx" />
@@ -208,6 +209,13 @@
     </Compile>
     <Compile Include="views\MainMaster.Master.designer.cs">
       <DependentUpon>MainMaster.Master</DependentUpon>
+    </Compile>
+    <Compile Include="views\MyBooks.aspx.cs">
+      <DependentUpon>MyBooks.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="views\MyBooks.aspx.designer.cs">
+      <DependentUpon>MyBooks.aspx</DependentUpon>
     </Compile>
     <Compile Include="views\OfferBook.aspx.cs">
       <DependentUpon>OfferBook.aspx</DependentUpon>

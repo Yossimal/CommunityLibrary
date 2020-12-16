@@ -13,10 +13,7 @@ namespace data_Access.views
         private Functions.Functions func = new Functions.Functions();
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (Request.QueryString["logout"] != null && Request.QueryString["logout"].ToString() == "logout")
-            {
-                Session.Abandon();
-            }
+
         }
 
         protected void signIn_Click(object sender, EventArgs e)
@@ -25,10 +22,9 @@ namespace data_Access.views
             {
                 User user = func.Authentication(userName.Text, password.Text);
                 Session["user-id"] = user.Id.ToString();
-                Response.Redirect("Profile.aspx");
-                signIn.Text = "Successfully signed in";
+                Response.Redirect("MyBooks.aspx");
             }
-            catch (Exception ex)
+            catch (Exception)
             {
 
             }
@@ -42,7 +38,7 @@ namespace data_Access.views
 
         protected void discover_Click(object sender, EventArgs e)
         {
-            Response.Redirect("Discover.aspx");
+            Response.Redirect("SearchBook.aspx");
         }
     }
 }
