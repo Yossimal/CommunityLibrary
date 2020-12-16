@@ -10,6 +10,25 @@
     </asp:ContentPlaceHolder>
 </head>
 <body>
+<div class="navbar navbar-inverse navbar-static-top">
+    <div class="container">
+        <button class="navbar-toggle" data-toggle="collapse" data-target=".navHeaderCollapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </button>
+        <ul class="navbar-nav nav navbar-left">
+            <li id="home"><a href="Welcome.aspx" >home</a></li>
+            <% if (Session["user-id"] != null)
+               { %>
+                <li><a href="Welcome.aspx?logout=logout&msg=2"></a></li>
+                <li><a href="SearchBook.aspx">Search Book</a></li>
+                <li><a href="OfferBook.aspx">Offer Book</a></li>
+                <li><a href="Profile.aspx">My Profile</a></li>
+                <% } %>
+        </ul>
+    </div>
+</div>
     <div class="container">
         <div class="row">
             <asp:ContentPlaceHolder ID="Body" runat="server">

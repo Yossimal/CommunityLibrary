@@ -13,7 +13,10 @@ namespace data_Access.views
         private Functions.Functions func = new Functions.Functions();
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if (Request.QueryString["logout"] != null && Request.QueryString["logout"].ToString() == "logout")
+            {
+                Session.Abandon();
+            }
         }
 
         protected void signIn_Click(object sender, EventArgs e)
@@ -21,9 +24,11 @@ namespace data_Access.views
             try
             {
                 User user = func.Authentication(userName.Text, password.Text);
+                Session["user-id"] = user.Id.ToString();
+                Response.Redirect("Profile.aspx");
                 signIn.Text = "Successfully signed in";
             }
-            catch (Exception)
+            catch (Exception ex)
             {
 
             }

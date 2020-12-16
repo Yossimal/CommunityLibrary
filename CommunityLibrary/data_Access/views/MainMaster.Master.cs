@@ -13,5 +13,9 @@ namespace data_Access.views
         {
 
         }
+
+        protected void logout_OnClick(object sender, EventArgs e)
+        {
+        }
     }
 }
