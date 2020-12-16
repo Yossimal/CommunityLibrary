@@ -56,7 +56,10 @@ namespace data_Access.Functions
             else
                 throw new Exception("error -  user doesn't exist");
         }
-        public User Authiticate(User user, string password) { throw new NotImplementedException(); }
+        public User Authiticate(string userName, string password) 
+        {
+            return ContextSingelton.Context.Users.First(u => u.UserName == userName && u.Password == password);
+        }
         public ICollection<User> GetAllUsers(Func<User, bool> predicate = null) 
         {
             if (predicate == null)
