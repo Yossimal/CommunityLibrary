@@ -57,11 +57,39 @@ namespace data_Access.Functions
                 throw new Exception("error -  user doesn't exist");
         }
         public User Authiticate(User user, string password) { throw new NotImplementedException(); }
-        public ICollection<Offer> GetAllUsers(Func<User, bool> predicate = null) { throw new NotImplementedException(); }
-        public ICollection<Offer> GetUserOffers(long id, Func<Offer, bool> predicate = null/*float km = float.MaxValue*/) { throw new NotImplementedException(); }
-        public ICollection<Order> GetUserOrders(long id, Func<Order, bool> predicate = null/*float km = float.MaxValue*/) { throw new NotImplementedException(); }
-        public ICollection<Comment> GetUserComments(long id, Func<Comment, bool> predicate = null/*float rating = 0*/) { throw new NotImplementedException(); }
-        public ICollection<Book> GetUserBooks(long id, Func<Book, bool> predicate = null) { throw new NotImplementedException(); }
-        public Address GetUserAddress(long id) { throw new NotImplementedException(); }
+        public ICollection<User> GetAllUsers(Func<User, bool> predicate = null) 
+        {
+            if (predicate == null)
+                return ContextSingelton.Context.Users.AsEnumerable().ToList();
+            return ContextSingelton.Context.Users.Where(predicate).AsEnumerable().ToList();
+        }
+        public ICollection<Offer> GetUserOffers(long id, Func<Offer, bool> predicate = null/*float km = float.MaxValue*/) 
+        {
+            if (predicate == null)
+                return ContextSingelton.Context.Users.First(U => U.Id == id).Offers.AsEnumerable().ToList();
+            return ContextSingelton.Context.Users.First(U => U.Id == id).Offers.Where(predicate).AsEnumerable().ToList();
+        }
+        public ICollection<Order> GetUserOrders(long id, Func<Order, bool> predicate = null/*float km = float.MaxValue*/) 
+        {
+            if (predicate == null)
+                return ContextSingelton.Context.Users.First(U => U.Id == id).Orders.AsEnumerable().ToList();
+            return ContextSingelton.Context.Users.First(U => U.Id == id).Orders.Where(predicate).AsEnumerable().ToList();
+        }
+        public ICollection<Comment> GetUserComments(long id, Func<Comment, bool> predicate = null/*float rating = 0*/) 
+        {
+            if (predicate == null)
+                return ContextSingelton.Context.Users.First(U => U.Id == id).comments.AsEnumerable().ToList();
+            return ContextSingelton.Context.Users.First(U => U.Id == id).comments.Where(predicate).AsEnumerable().ToList();
+        }
+        public ICollection<Book> GetUserBooks(long id, Func<Book, bool> predicate = null) 
+        {
+            if (predicate == null)
+                return ContextSingelton.Context.Users.First(U => U.Id == id).Books.AsEnumerable().ToList();
+            return ContextSingelton.Context.Users.First(U => U.Id == id).Books.Where(predicate).AsEnumerable().ToList();
+        }
+        public Address GetUserAddress(long id) 
+        {
+            return ContextSingelton.Context.Users.First(U => U.Id == id).Address;
+        }
     }
 }

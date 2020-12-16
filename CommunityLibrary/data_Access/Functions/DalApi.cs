@@ -38,7 +38,7 @@ namespace data_Access.Functions
         Book SearchBook(long id);
         void UpdateBook(Book book);
         void DeleteBook(long id);
-        ICollection<Offer> GetAllBooks(Func<Book, bool> predicate = null);
+        ICollection<Book> GetAllBooks(Func<Book, bool> predicate = null);
         ICollection<Offer> GetBookOffers(long id, Func<Offer, bool> predicate = null/*float km = float.MaxValue*/);
         ICollection<Order> GetBookOrders(long id, Func<Order, bool> predicate = null/*float km = float.MaxValue*/);
 
@@ -49,7 +49,7 @@ namespace data_Access.Functions
         Comment SearchComment(long id);
         void UpdateComment(Comment comment);
         void DeleteComment(long id);
-        ICollection<Offer> GetAllComments(Func<Comment, bool> predicate = null);
+        ICollection<Comment> GetAllComments(Func<Comment, bool> predicate = null);
 
 
 
@@ -65,8 +65,6 @@ namespace data_Access.Functions
         void AddOrder(Order order);
         Order SearchOrder(long id);
         void UpdateOrder(Order order);
-        void DeleteOrder(long id);
-        Book GetOrderBook(long id);
-        
+        void DeleteOrder(long id);        
     }
 }

@@ -22,5 +22,12 @@ namespace data_Access.Models
         public long AddressId { get; set; }
         public Address Address { get; set; }
         public enum Roles { Basic, Premium, Administrator }
+        public ICollection<Offer> Offers { get; set; }
+        public ICollection<Order> Orders { get; set; }
+        public ICollection<Book> Books { get; set; }
+        public ICollection<Comment> comments { get; set; }
+
+
+
     }
 }

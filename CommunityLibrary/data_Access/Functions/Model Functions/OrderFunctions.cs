@@ -43,7 +43,7 @@ namespace data_Access.Functions
                 throw new Exception("error - Couldn't update the order");
             }
         }
-        void DeleteOrder(long id)
+        public void DeleteOrder(long id)
         {
             var Del = ContextSingelton.Context.Orders.First(order => order.Id == id);
             if (Del != null)
@@ -54,6 +54,5 @@ namespace data_Access.Functions
             else
                 throw new Exception("error -  order doesn't exist");
         }
-        Book GetOrderBook(long id) { throw new NotImplementedException(); }
     }
 }

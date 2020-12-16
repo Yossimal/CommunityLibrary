@@ -100,10 +100,12 @@ namespace data_Access.Functions
             if (!Validator.ContnetIsValid(offer.StatusDescription))
                 throw new Exception("error: Offer's status description is invalid");
         }
+        public static void ValidateOrder(Order order)
+        {
+        }
 
         ///NOT IMPLEMENTED
         public static void ValidateAddress(Address address){  }
-        public static void ValidateOrder(Order order) {  }
 
 
 

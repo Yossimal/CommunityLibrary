@@ -56,8 +56,23 @@ namespace data_Access.Functions
             else
                 throw new Exception("error -  book doesn't exist");
         }
-        public ICollection<Offer> GetAllBooks(Func<Book, bool> predicate = null) { throw new NotImplementedException(); }
-        public ICollection<Offer> GetBookOffers(long id, Func<Offer, bool> predicate = null/*float km = float.MaxValue*/) { throw new NotImplementedException(); }
-        public ICollection<Order> GetBookOrders(long id, Func<Order, bool> predicate = null/*float km = float.MaxValue*/) { throw new NotImplementedException(); }
+        public ICollection<Book> GetAllBooks(Func<Book, bool> predicate = null)
+        {
+            if (predicate == null)
+                return ContextSingelton.Context.Books.ToList();
+            return ContextSingelton.Context.Books.Where(predicate).ToList();
+        }
+        public ICollection<Offer> GetBookOffers(long id, Func<Offer, bool> predicate = null/*float km = float.MaxValue*/)
+        {
+            if (predicate == null)
+                return ContextSingelton.Context.Books.First(B => B.Id == id).OffersList.ToList();
+            return ContextSingelton.Context.Books.First(B => B.Id == id).OffersList.Where(predicate).ToList();
+        }
+        public ICollection<Order> GetBookOrders(long id, Func<Order, bool> predicate = null/*float km = float.MaxValue*/)
+        {
+            if (predicate == null)
+                return ContextSingelton.Context.Books.First(B => B.Id == id).OrdersList.ToList();
+            return ContextSingelton.Context.Books.First(B => B.Id == id).OrdersList.Where(predicate).ToList();
+        }
     }
 }
