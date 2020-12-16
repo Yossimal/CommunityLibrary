@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Text.RegularExpressions;
+using data_Access.Models;
 using data_Access.Context;
 
 
@@ -11,7 +12,101 @@ namespace data_Access.Functions
     // C# code to validate a password 
     static class Validator
     {
+
         static DataContext dataContext = new DataContext();
+
+
+        public static void ValidateUser(User user)
+        {
+            string exception = "error: ";
+            bool foundEx = false;
+            if (Validator.AgeIsValid(user.BirthDate))
+            {
+                exception += "Age is invalid ";
+                foundEx = true;
+            }
+
+            if (!(Validator.PasswordIsValid(user.Password)))
+            {
+                exception += "password is invalid ";
+                foundEx = true;
+            }
+
+            if (Validator.MailIsValid(user.EmailAddress))
+            {
+                exception += "Email address is invalid ";
+                foundEx = true;
+            }
+
+            if (Validator.PhoneIsValid(user.PhoneNumber))
+            {
+                exception += "phone number is invalid ";
+                foundEx = true;
+            }
+
+            if (Validator.UsernameIsValid(user.UserName))
+            {
+                exception += "username is invalid ";
+                foundEx = true;
+            }
+
+            user.FirstName = user.FirstName.Trim();
+            if (!Validator.NameIsValid(user.FirstName))
+            {
+                exception += "first name is invalid ";
+                foundEx = true;
+            }
+
+            user.LastName = user.LastName.Trim();
+            if (!Validator.NameIsValid(user.LastName))
+            {
+                exception += "last name is invalid ";
+                foundEx = true;
+            }
+            if (foundEx)
+                throw new Exception(exception);
+        }
+        public static void ValidateBook(Book book)
+        {
+            string exception = "error: ";
+            bool foundEx = false;
+            if (!Validator.NameIsValid(book.Name))
+            {
+                exception += "name is invalid ";
+                foundEx = true;
+            }
+
+            if (!Validator.NameIsValid(book.Author))
+            {
+                exception += "author is invalid ";
+                foundEx = true;
+            }
+
+            if (!Validator.BarCodeIsValid(book.BarCode))
+            {
+                exception += "barcode is invalid ";
+                foundEx = true;
+            }
+            if (foundEx)
+                throw new Exception(exception);
+        }
+        public static void ValidateComment(Comment comment)
+        {
+            if (!Validator.ContnetIsValid(comment.Content))
+                throw new Exception("error: Comment's content is invalid!");
+        }
+        public static void ValidateOffer(Offer offer) 
+        {
+            if (!Validator.ContnetIsValid(offer.StatusDescription))
+                throw new Exception("error: Offer's status description is invalid");
+        }
+
+        ///NOT IMPLEMENTED
+        public static void ValidateAddress(Address address){  }
+        public static void ValidateOrder(Order order) {  }
+
+
+
 
         // A utility function to check 
         // whether a password is valid or not 

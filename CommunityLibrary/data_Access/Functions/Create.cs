@@ -7,40 +7,18 @@ using data_Access.Context;
 
 namespace data_Access.Functions
 {
-    public partial class Functions:DalApi
+    public partial class Functions : DalApi
     {
 
         public void AddUser(User user)
         {
             Validator.TrimObject(user);
-
-            if (Validator.AgeIsValid(user.BirthDate))
-                throw new Exception("error - Age is invalid.");
-
-            if (!(Validator.PasswordIsValid(user.Password)))
-                throw new Exception("error - password is invalid.");
-
-            if (Validator.MailIsValid(user.UserName))
-                throw new Exception("error -  Email address is invalid.");
-
-            if (Validator.PhoneIsValid(user.PhoneNumber))
-                throw new Exception("error -  phone number address is invalid.");
-
-            if (Validator.PhoneIsValid(user.UserName))
-                throw new Exception("error -  phone number address is invalid.");
-
-            user.FirstName = user.FirstName.Trim();
-            if(!Validator.NameIsValid(user.FirstName))
-                throw new Exception("error -  first name is invalid.");
-
-            user.LastName = user.LastName.Trim();
-            if (!Validator.NameIsValid(user.LastName))
-                throw new Exception("error -  last name is invalid.");
-
             try
             {
+                Validator.ValidateUser(user);
                 ContextSingelton.Context.Users.Add(user);
                 ContextSingelton.Context.SaveChanges();
+
             }
             catch (Exception)
             {
@@ -50,28 +28,29 @@ namespace data_Access.Functions
 
         public void AddAddress(Address address)
         {
-            throw new NotImplementedException();
+            Validator.TrimObject(address);
+            try
+            {
+                Validator.ValidateAddress(address);
+                ContextSingelton.Context.Address.Add(address);
+                ContextSingelton.Context.SaveChanges();
+            }
+            catch (Exception)
+            {
+                throw new Exception("error - Couln't add the address");
+            }
         }
 
         public void AddBook(Book book)
         {
             Validator.TrimObject(book);
-
-            if (!Validator.NameIsValid(book.Name))
-                throw new Exception("error - Book's name is invalid.");
-
-            if (!Validator.NameIsValid(book.Author))
-                throw new Exception("error - Book's author is invalid.");
-
-            if (!Validator.BarCodeIsValid(book.BarCode))
-                throw new Exception("error - Book's barcode is invalid.");
-
             try
             {
+                Validator.ValidateBook(book);
                 ContextSingelton.Context.Books.Add(book);
                 ContextSingelton.Context.SaveChanges();
             }
-            catch (Exception e)
+            catch (Exception)
             {
                 throw new Exception("error - Couln't add the book");
             }
@@ -80,12 +59,9 @@ namespace data_Access.Functions
         public void AddComment(Comment comment)
         {
             Validator.TrimObject(comment);
-
-            if (!Validator.ContnetIsValid(comment.Content))
-                throw new Exception("error - Comment's content is invalid!");
-
             try
             {
+                Validator.ValidateComment(comment);   
                 ContextSingelton.Context.Comments.Add(comment);
                 ContextSingelton.Context.SaveChanges();
             }
@@ -97,12 +73,9 @@ namespace data_Access.Functions
         public void AddOffer(Offer offer)
         {
             Validator.TrimObject(offer);
-
-            if (!Validator.ContnetIsValid(offer.StatusDescription))
-                throw new Exception("error - Offer's status description is invalid");
-
             try
             {
+                Validator.ValidateOffer(offer);
                 ContextSingelton.Context.Offers.Add(offer);
                 ContextSingelton.Context.SaveChanges();
             }
@@ -115,6 +88,7 @@ namespace data_Access.Functions
         {
             try
             {
+                Validator.ValidateOrder(order);
                 ContextSingelton.Context.Orders.Add(order);
                 ContextSingelton.Context.SaveChanges();
             }
