@@ -22,7 +22,7 @@ namespace data_Access.views
             {
                 User user = func.Authentication(userName.Text, password.Text);
                 Session["user-id"] = user.Id.ToString();
-                Response.Redirect("Profile.aspx");
+                Response.Redirect("MyBooks.aspx");
             }
             catch (Exception)
             {
@@ -38,7 +38,7 @@ namespace data_Access.views
 
         protected void discover_Click(object sender, EventArgs e)
         {
-            Response.Redirect("Discover.aspx");
+            Response.Redirect("SearchBook.aspx");
         }
     }
 }
