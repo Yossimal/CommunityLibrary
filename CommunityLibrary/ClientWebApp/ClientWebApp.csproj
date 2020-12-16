@@ -68,6 +68,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Global.asax" />
+    <Content Include="JS\AJAXCalls.js" />
     <Content Include="tests\JQuery.js" />
     <Content Include="tests\test.html" />
     <Content Include="tests\test.js" />

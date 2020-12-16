@@ -4,12 +4,11 @@ using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
-using System.Web.Http.Cors;
 
 namespace data_Access.Controllers
 {
-    [EnableCors(origins: "https://localhost:44300/", headers: "*", methods: "*")]
-    public class MainController : ApiController
+
+    public class Test : ApiController
     {
         // GET api/<controller>
         public IEnumerable<string> Get()
