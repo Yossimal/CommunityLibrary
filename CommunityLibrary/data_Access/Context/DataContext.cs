@@ -20,5 +20,10 @@ namespace data_Access.Context
         {
             
         }
+
+        protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        {
+            base.OnModelCreating(modelBuilder);
+        }
     }
 }

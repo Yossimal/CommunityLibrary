@@ -42,10 +42,19 @@ namespace data_Access.HttpAPI
         [ScriptMethod(ResponseFormat = ResponseFormat.Json)]
         public string AddUser(User user)
         {
-            data.AddUser(user);
-            return "fail";
+            try
+            {
+                data.AddUser(user);
+                return "ok";
+            }
+            catch(Exception ex)
+            {
+                return ex.Message;
+               
+            }
         }
 
+        
 
     }
 }
