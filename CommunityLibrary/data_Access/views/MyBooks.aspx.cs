@@ -44,20 +44,5 @@ namespace data_Access.views
                 tablePanel.Visible = false;
             }
         }
-
-        protected void btnOffer_Click(object sender, EventArgs e)
-        {
-            Response.Redirect("OfferBook.aspx");
-        }
-
-        protected void btnDiscover_Click(object sender, EventArgs e)
-        {
-            Response.Redirect("SearchBook.aspx");
-        }
-
-        protected void btnProfile_Click(object sender, EventArgs e)
-        {
-            Response.Redirect("Profile.aspx");
-        }
     }
 }

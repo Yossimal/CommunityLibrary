@@ -8,10 +8,6 @@
 </head>
 <body>
     <form id="form1" runat="server">
-        <asp:Button ID="btnProfile" runat="server" Text="Profile" OnClick="btnProfile_Click" />
-        <asp:Button ID="btnDiscover" runat="server" Text="Discover" OnClick="btnDiscover_Click" />
-        <asp:Button ID="btnOffer" runat="server" Text="Offer Book" OnClick="btnOffer_Click" />
-
         <asp:Panel ID="tablePanel" runat="server">
             <table class="table table-bordered">
                 <tr>
