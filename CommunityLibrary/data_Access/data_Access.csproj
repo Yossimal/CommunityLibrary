@@ -178,6 +178,10 @@
     <Compile Include="Migrations\202012161610465_AddOrderConfig.designer.cs">
       <DependentUpon>202012161610465_AddOrderConfig.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202012162014347_RemoveBookListFromUser.cs" />
+    <Compile Include="Migrations\202012162014347_RemoveBookListFromUser.designer.cs">
+      <DependentUpon>202012162014347_RemoveBookListFromUser.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Address.cs" />
     <Compile Include="HttpAPI\CommunityLibraryPrivate.asmx.cs">
@@ -243,6 +247,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202012161610465_AddOrderConfig.resx">
       <DependentUpon>202012161610465_AddOrderConfig.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202012162014347_RemoveBookListFromUser.resx">
+      <DependentUpon>202012162014347_RemoveBookListFromUser.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

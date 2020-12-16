@@ -589,19 +589,19 @@ namespace data_Access.HttpAPI
         }
 
 
-        [WebMethod]
-        [ScriptMethod(ResponseFormat = ResponseFormat.Json)]
-        public List<Book> GetUserBooks(long id)
-        {
-            try
-            {
-                return data.GetUserBooks(id).ToList();
-            }
-            catch
-            {
-                return null;
-            }
-        }
+        //[WebMethod]
+        //[ScriptMethod(ResponseFormat = ResponseFormat.Json)]
+        //public List<Book> GetUserBooks(long id)
+        //{
+        //    try
+        //    {
+        //        return data.GetUserBooks(id).ToList();
+        //    }
+        //    catch
+        //    {
+        //        return null;
+        //    }
+        //}
 
         [WebMethod]
         [ScriptMethod(ResponseFormat = ResponseFormat.Json)]

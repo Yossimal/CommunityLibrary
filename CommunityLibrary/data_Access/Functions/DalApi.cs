@@ -20,7 +20,7 @@ namespace data_Access.Functions
         ICollection<Offer> GetUserOffers(long id, Func<Offer, bool> predicate = null/*float km = float.MaxValue*/);
         ICollection<Order> GetUserOrders(long id, Func<Order, bool> predicate = null/*float km = float.MaxValue*/);
         ICollection<Comment> GetUserComments(long id, Func<Comment, bool> predicate = null/*float rating = 0*/);
-        ICollection<Book> GetUserBooks(long id, Func<Book, bool> predicate = null);
+        //ICollection<Book> GetUserBooks(long id, Func<Book, bool> predicate = null);
         Address GetUserAddress(long id);
 
 

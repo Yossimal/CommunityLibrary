@@ -22,7 +22,20 @@ namespace data_Access.views
            Models.User usr=new User();
            usr.UserName = userName.Text;
            usr.FirstName = firstName.Text;
-
+           usr.LastName = lastName.Text;
+           usr.BirthDate = DateTime.Parse(bitrthDate.Text);
+           usr.EmailAddress = email.Text;
+           usr.Password = password.Text;
+           usr.PhoneNumber = phoneNumber.Text;
+           usr.LendingCount = 0;
+           Address add=new Address();
+           add.Apartment = apartmentNumber.Text;
+           add.City = city.Text;
+           add.Country = country.Text;
+           add.Enterance = Enterance.Text;
+           add.ZipCode = zip.Text;
+           add.StreatAddress = street.Text;
+           usr.Address = add;
            try
            {
                func.AddUser(usr);

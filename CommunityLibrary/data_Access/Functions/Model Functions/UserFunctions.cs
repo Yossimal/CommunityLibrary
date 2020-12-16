@@ -84,12 +84,12 @@ namespace data_Access.Functions
                 return ContextSingelton.Context.Users.First(U => U.Id == id).Comments.AsEnumerable().ToList();
             return ContextSingelton.Context.Users.First(U => U.Id == id).Comments.Where(predicate).AsEnumerable().ToList();
         }
-        public ICollection<Book> GetUserBooks(long id, Func<Book, bool> predicate = null) 
-        {
-            if (predicate == null)
-                return ContextSingelton.Context.Users.First(U => U.Id == id).Books.AsEnumerable().ToList();
-            return ContextSingelton.Context.Users.First(U => U.Id == id).Books.Where(predicate).AsEnumerable().ToList();
-        }
+        //public ICollection<Book> GetUserBooks(long id, Func<Book, bool> predicate = null) 
+        //{
+        //    if (predicate == null)
+        //        return ContextSingelton.Context.Users.First(U => U.Id == id).Books.AsEnumerable().ToList();
+        //    return ContextSingelton.Context.Users.First(U => U.Id == id).Books.Where(predicate).AsEnumerable().ToList();
+        //}
         public Address GetUserAddress(long id) 
         {
             return ContextSingelton.Context.Users.First(U => U.Id == id).Address;

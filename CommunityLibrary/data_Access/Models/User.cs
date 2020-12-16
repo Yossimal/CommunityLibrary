@@ -24,7 +24,7 @@ namespace data_Access.Models
         public enum Roles { Basic, Premium, Administrator }
         public List<Offer> Offers { get; set; }
         public List<Order> Orders { get; set; }
-        public List<Book> Books { get; set; }
+       // public List<Book> Books { get; set; }
         public List<Comment> Comments { get; set; }
     }
 }
