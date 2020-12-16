@@ -8,6 +8,7 @@ using System.Web.Services;
 using System.Web.UI.WebControls;
 using data_Access.Models;
 using System.Web.Script.Services;
+using data_Access.Functions;
 
 namespace data_Access.HttpAPI
 {
@@ -22,24 +23,30 @@ namespace data_Access.HttpAPI
      [ScriptService]
     public class CommunityLibraryPrivate : System.Web.Services.WebService
     {
-        
+        private DalApi data=new Functions.Functions();
         [WebMethod]
         [ScriptMethod(ResponseFormat = ResponseFormat.Json)]
         public User CheckLogin(string key,string userName,string password)
         {
-            User ret = new User();
-            ret.UserName = userName;
-            ret.FirstName = "test";
-            ret.Password = password;
+            User ret=new User();
+           
             return ret;
+        }
+        [WebMethod]
+        [ScriptMethod(ResponseFormat = ResponseFormat.Json)]
+        public User GetUser(int id)
+        {
+            
+            return data.SearchUser(id);
         }
 
         [WebMethod]
         [ScriptMethod(ResponseFormat = ResponseFormat.Json)]
-        public string Test(string name)
+        public string AddUser()
         {
-            return name.ToUpper();
+            return "fail";
         }
+
 
     }
 }
