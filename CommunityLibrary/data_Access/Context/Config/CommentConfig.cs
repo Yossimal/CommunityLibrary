@@ -8,21 +8,20 @@ using data_Access.Models;
 
 namespace data_Access.Context.Config
 {
-    public class BooksConfig:EntityTypeConfiguration<Book>
+    public class CommentConfig:EntityTypeConfiguration<Comment>
     {
-        public BooksConfig()
+        public CommentConfig()
         {
-            Property(b => b.Author)
+            Property(c => c.Content)
                 .IsRequired();
-            Property(b => b.BarCode)
+            Property(c => c.Reference)
                 .IsRequired();
-            Property(b => b.Name)
+            Property(c => c.UserId)
                 .IsRequired();
-            /*
-            HasMany(b => b.OffersList)
-                .WithRequired(o => o.Book)
-                .HasForeignKey(o => o.BookId);
-            */
+            Property(c => c.Rating)
+                .IsRequired();
+
+            
 
         }
     }

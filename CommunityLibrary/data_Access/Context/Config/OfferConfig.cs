@@ -11,8 +11,6 @@ namespace data_Access.Context.Config
     {
         public OfferConfig()
         {
-            Property(o => o.BookId)
-                .IsRequired();
             Property(o => o.CreateDate)
                 .IsRequired();
             Property(o => o.DaysForGive)
@@ -22,7 +20,8 @@ namespace data_Access.Context.Config
             Property(o => o.StatusDescription)
                 .IsOptional();
             
-
+            
+            /*
             HasMany(o => o.Orders)
                 .WithRequired(o => o.Offer)
                 .HasForeignKey(o => o.OfferId);
@@ -30,7 +29,7 @@ namespace data_Access.Context.Config
             HasMany(o => o.Comments)
                 .WithOptional(c => c.Offer)
                 .HasForeignKey(c => c.OfferId);
-
+            */
         }
     }
 }

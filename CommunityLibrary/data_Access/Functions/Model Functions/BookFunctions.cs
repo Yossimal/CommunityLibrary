@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Web;
 using data_Access.Models;
@@ -70,9 +71,17 @@ namespace data_Access.Functions
         }
         public ICollection<Order> GetBookOrders(long id, Func<Order, bool> predicate = null/*float km = float.MaxValue*/)
         {
-            if (predicate == null)
-                return ContextSingelton.Context.Books.First(B => B.Id == id).OrdersList.ToList();
-            return ContextSingelton.Context.Books.First(B => B.Id == id).OrdersList.Where(predicate).ToList();
+            var books = ContextSingelton.Context.Books.Include(b=>b.OffersList.Select(o=>o.Orders)).First(b=>b.Id==id);
+            List<Order> ret=new List<Order>();
+            foreach (var o in books.OffersList)
+            {
+                ret.AddRange(o.Orders.Where(predicate));
+            }
+
+            return ret;
+            //if (predicate == null)
+            //    return ContextSingelton.Context.Books.First(B => B.Id == id).OrdersList.ToList();
+            //return ContextSingelton.Context.Books.First(B => B.Id == id).OrdersList.Where(predicate).ToList();
         }
     }
 }

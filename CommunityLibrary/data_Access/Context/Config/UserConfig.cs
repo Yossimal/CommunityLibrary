@@ -30,7 +30,7 @@ namespace data_Access.Context.Config
                 .IsRequired();
                 
 
-            HasMany(u => u.comments)
+            HasMany(u => u.Comments)
                 .WithRequired(c => c.User)
                 .HasForeignKey(c => c.UserId)
                 .WillCascadeOnDelete(false);

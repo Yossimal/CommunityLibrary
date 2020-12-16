@@ -103,7 +103,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Context\Config\AddressConfig.cs" />
     <Compile Include="Context\Config\BooksConfig.cs" />
+    <Compile Include="Context\Config\CommentConfig.cs" />
     <Compile Include="Context\Config\OfferConfig.cs" />
     <Compile Include="Context\Config\OrderConfig.cs" />
     <Compile Include="Context\Config\UserConfig.cs" />
@@ -133,6 +135,34 @@
     <Compile Include="Migrations\202012161320394_ModifyOrdersAndMore.cs" />
     <Compile Include="Migrations\202012161320394_ModifyOrdersAndMore.designer.cs">
       <DependentUpon>202012161320394_ModifyOrdersAndMore.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202012161450574_RemoveOrdersListFromBook.cs" />
+    <Compile Include="Migrations\202012161450574_RemoveOrdersListFromBook.designer.cs">
+      <DependentUpon>202012161450574_RemoveOrdersListFromBook.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202012161452555_AddAddressConfiguration.cs" />
+    <Compile Include="Migrations\202012161452555_AddAddressConfiguration.designer.cs">
+      <DependentUpon>202012161452555_AddAddressConfiguration.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202012161455317_AddUserConfiguration.cs" />
+    <Compile Include="Migrations\202012161455317_AddUserConfiguration.designer.cs">
+      <DependentUpon>202012161455317_AddUserConfiguration.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202012161522303_AddCommentsConfig.cs" />
+    <Compile Include="Migrations\202012161522303_AddCommentsConfig.designer.cs">
+      <DependentUpon>202012161522303_AddCommentsConfig.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202012161607586_AddBookConfig.cs" />
+    <Compile Include="Migrations\202012161607586_AddBookConfig.designer.cs">
+      <DependentUpon>202012161607586_AddBookConfig.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202012161608594_AddOfferConfig.cs" />
+    <Compile Include="Migrations\202012161608594_AddOfferConfig.designer.cs">
+      <DependentUpon>202012161608594_AddOfferConfig.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202012161610465_AddOrderConfig.cs" />
+    <Compile Include="Migrations\202012161610465_AddOrderConfig.designer.cs">
+      <DependentUpon>202012161610465_AddOrderConfig.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Address.cs" />
@@ -171,6 +201,27 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202012161320394_ModifyOrdersAndMore.resx">
       <DependentUpon>202012161320394_ModifyOrdersAndMore.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202012161450574_RemoveOrdersListFromBook.resx">
+      <DependentUpon>202012161450574_RemoveOrdersListFromBook.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202012161452555_AddAddressConfiguration.resx">
+      <DependentUpon>202012161452555_AddAddressConfiguration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202012161455317_AddUserConfiguration.resx">
+      <DependentUpon>202012161455317_AddUserConfiguration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202012161522303_AddCommentsConfig.resx">
+      <DependentUpon>202012161522303_AddCommentsConfig.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202012161607586_AddBookConfig.resx">
+      <DependentUpon>202012161607586_AddBookConfig.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202012161608594_AddOfferConfig.resx">
+      <DependentUpon>202012161608594_AddOfferConfig.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202012161610465_AddOrderConfig.resx">
+      <DependentUpon>202012161610465_AddOrderConfig.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

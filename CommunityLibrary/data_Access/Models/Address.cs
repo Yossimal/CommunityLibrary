@@ -16,6 +16,6 @@ namespace data_Access.Models
         public string State { get; set; }
         public string ZipCode { get; set; }
         public string Country { get; set; }
-        public List<User> PepolesInAdress { get; set; }
+        public List<User> UsersInAddress { get; set; }
     }
 }

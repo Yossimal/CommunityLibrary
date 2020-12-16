@@ -81,8 +81,8 @@ namespace data_Access.Functions
         public ICollection<Comment> GetUserComments(long id, Func<Comment, bool> predicate = null/*float rating = 0*/) 
         {
             if (predicate == null)
-                return ContextSingelton.Context.Users.First(U => U.Id == id).comments.AsEnumerable().ToList();
-            return ContextSingelton.Context.Users.First(U => U.Id == id).comments.Where(predicate).AsEnumerable().ToList();
+                return ContextSingelton.Context.Users.First(U => U.Id == id).Comments.AsEnumerable().ToList();
+            return ContextSingelton.Context.Users.First(U => U.Id == id).Comments.Where(predicate).AsEnumerable().ToList();
         }
         public ICollection<Book> GetUserBooks(long id, Func<Book, bool> predicate = null) 
         {

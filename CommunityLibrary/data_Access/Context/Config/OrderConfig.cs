@@ -18,13 +18,13 @@ namespace data_Access.Context.Config
                 .IsOptional();
             Property(o => o.StartTime)
                 .IsRequired();
-            Property(o => o.OfferId)
-                .IsRequired();
+            Property(o => o.OfferId);
 
+            /*
             HasMany(o => o.Comments)
                 .WithOptional(c => c.Order)
                 .HasForeignKey(c => c.OrderId);
-
+            */
         }
     }
 }

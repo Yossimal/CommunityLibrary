@@ -2,8 +2,10 @@
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
+using System.Diagnostics;
 using System.Linq;
 using System.Web;
+using data_Access.Context.Config;
 
 namespace data_Access.Context
 {
@@ -23,6 +25,13 @@ namespace data_Access.Context
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
+            modelBuilder.Configurations.Add(new AddressConfig());
+            modelBuilder.Configurations.Add(new UserConfig());
+            modelBuilder.Configurations.Add(new CommentConfig());
+            modelBuilder.Configurations.Add(new OfferConfig());
+            modelBuilder.Configurations.Add(new BooksConfig());
+            modelBuilder.Configurations.Add(new OrderConfig());
+
             base.OnModelCreating(modelBuilder);
         }
     }
