@@ -21,6 +21,12 @@ namespace data_Access.views
 
         protected void OnClick(object sender, EventArgs e)
         {
+            if (!long.TryParse(Session["user-id"].ToString(), out long userId))
+            {
+                Response.Redirect("Welcome.aspx?msg=1");
+            }
+
+            User user = ContextSingelton.Context.Users.Find(userId);
             Offer toAdd=new Offer();
             Book offeredBook = ContextSingelton.Context.Books.FirstOrDefault(b => b.BarCode == bookCode.Value);
             if (offeredBook == null)
@@ -34,7 +40,7 @@ namespace data_Access.views
 
             toAdd.Book = offeredBook;
             toAdd.CreateDate=DateTime.Now;
-            toAdd.OfferUser = ContextSingelton.Context.Users.Find(Session["user-id"].ToString());
+            toAdd.OfferUser = user;
             toAdd.DaysForGive = int.Parse(timeToProvide.Value);
             toAdd.DaysForReturn = int.Parse(timeToReturn.Value);
             ContextSingelton.Context.Offers.Add(toAdd);
