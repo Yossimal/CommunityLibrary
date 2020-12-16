@@ -56,33 +56,12 @@ namespace data_Access.Functions
             else
                 throw new Exception("error -  user doesn't exist");
         }
-        public User Authiticate(User user, string password);
-        public ICollection<User> GetAllUsers(Func<User, bool> predicate = null)
-        {
-            if (predicate == null)
-                return ContextSingelton.Context.Users.ToList();
-            return ContextSingelton.Context.Users.Where(predicate).ToList();
-        }
-        public ICollection<Offer> GetUserOffers(long id, Func<Offer, bool> predicate = null/*float km = float.MaxValue*/)
-        {
-            if (predicate == null)
-                return ContextSingelton.Context.Users.Find(U => U.Id == id).;
-            return ContextSingelton.Context.Users.Where(predicate).ToList();
-        }
-        public ICollection<Order> GetUserOrders(long id, Func<Order, bool> predicate = null/*float km = float.MaxValue*/)
-        {
-
-        }
-        public ICollection<Comment> GetUserComments(long id, Func<Comment, bool> predicate = null/*float rating = 0*/)
-        {
-
-        }
-        public ICollection<Book> GetUserBooks(long id, Func<Book, bool> predicate = null)
-        {
-
-        }
-        public Address GetUserAddress(long id);
-        {
-        }
+        public User Authiticate(User user, string password) { throw new NotImplementedException(); }
+        public ICollection<Offer> GetAllUsers(Func<User, bool> predicate = null) { throw new NotImplementedException(); }
+        public ICollection<Offer> GetUserOffers(long id, Func<Offer, bool> predicate = null/*float km = float.MaxValue*/) { throw new NotImplementedException(); }
+        public ICollection<Order> GetUserOrders(long id, Func<Order, bool> predicate = null/*float km = float.MaxValue*/) { throw new NotImplementedException(); }
+        public ICollection<Comment> GetUserComments(long id, Func<Comment, bool> predicate = null/*float rating = 0*/) { throw new NotImplementedException(); }
+        public ICollection<Book> GetUserBooks(long id, Func<Book, bool> predicate = null) { throw new NotImplementedException(); }
+        public Address GetUserAddress(long id) { throw new NotImplementedException(); }
     }
 }

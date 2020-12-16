@@ -54,6 +54,6 @@ namespace data_Access.Functions
             else
                 throw new Exception("error -  order doesn't exist");
         }
-        Book GetOrderBook(long id);
+        Book GetOrderBook(long id) { throw new NotImplementedException(); }
     }
 }

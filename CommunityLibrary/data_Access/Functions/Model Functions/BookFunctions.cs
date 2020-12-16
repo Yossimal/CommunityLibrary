@@ -56,8 +56,8 @@ namespace data_Access.Functions
             else
                 throw new Exception("error -  book doesn't exist");
         }
-        public ICollection<Offer> GetAllBooks(Func<Book, bool> predicate = null) { return null; }
-        public ICollection<Offer> GetBookOffers(long id, Func<Offer, bool> predicate = null/*float km = float.MaxValue*/) { }
-        public ICollection<Order> GetBookOrders(long id, Func<Order, bool> predicate = null/*float km = float.MaxValue*/) { }
+        public ICollection<Offer> GetAllBooks(Func<Book, bool> predicate = null) { throw new NotImplementedException(); }
+        public ICollection<Offer> GetBookOffers(long id, Func<Offer, bool> predicate = null/*float km = float.MaxValue*/) { throw new NotImplementedException(); }
+        public ICollection<Order> GetBookOrders(long id, Func<Order, bool> predicate = null/*float km = float.MaxValue*/) { throw new NotImplementedException(); }
     }
 }

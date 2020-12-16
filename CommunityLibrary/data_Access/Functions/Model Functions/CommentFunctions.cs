@@ -56,7 +56,7 @@ namespace data_Access.Functions
             else
                 throw new Exception("error -  comment doesn't exist");
         }
-        public ICollection<Offer> GetAllComments(Func<Offer, bool> predicate = null);
+        public ICollection<Offer> GetAllComments(Func<Offer, bool> predicate = null) { throw new NotImplementedException(); }
 
     }
 }
