@@ -15,7 +15,7 @@ namespace data_Access.Functions
         User SearchUser(long id);
         void UpdateUser(User user);
         void DeleteUser(long id);
-        User Authiticate(string name, string password);
+        User Authentication(string name, string password);
         ICollection<User> GetAllUsers(Func<User, bool> predicate = null);
         ICollection<Offer> GetUserOffers(long id, Func<Offer, bool> predicate = null/*float km = float.MaxValue*/);
         ICollection<Order> GetUserOrders(long id, Func<Order, bool> predicate = null/*float km = float.MaxValue*/);

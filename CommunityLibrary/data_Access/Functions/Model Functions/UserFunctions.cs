@@ -56,7 +56,7 @@ namespace data_Access.Functions
             else
                 throw new Exception("error -  user doesn't exist");
         }
-        public User Authiticate(string userName, string password) 
+        public User Authentication(string userName, string password) 
         {
             return ContextSingelton.Context.Users.First(u => u.UserName == userName && u.Password == password);
         }

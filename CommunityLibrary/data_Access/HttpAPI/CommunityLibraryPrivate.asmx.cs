@@ -29,7 +29,7 @@ namespace data_Access.HttpAPI
         [ScriptMethod(ResponseFormat = ResponseFormat.Json)]
         public User CheckLogin(string userName,string password)
         {
-            return data.Authiticate(userName,password);
+            return data.Authentication(userName,password);
         }
         [WebMethod]
         [ScriptMethod(ResponseFormat = ResponseFormat.Json)]
