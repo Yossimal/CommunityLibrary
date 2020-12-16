@@ -1,23 +1,17 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Welcome.aspx.cs" Inherits="data_Access.views.WebForm1" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" MasterPageFile="MainMaster.Master" CodeBehind="Welcome.aspx.cs" Inherits="data_Access.views.WebForm1" %>
 
-<!DOCTYPE html>
+<asp:Content ContentPlaceHolderID="Body" runat="server">
+    <div class="col-lg-12">
+        <form id="form1" runat="server" class="form-group">
+            <label>User name:</label>
+            <asp:TextBox ID="userName" runat="server" CssClass="form-control"></asp:TextBox>
+            <label>Password:</label>
+            <asp:TextBox ID="password" runat="server" TextMode="Password" CssClass="form-control"></asp:TextBox><br />
 
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
-    <title></title>
-</head>
-<body>
-    <form id="form1" runat="server">
-        <label>User name:</label>
-        <asp:TextBox id="userName" runat="server"></asp:TextBox>
-        <label>Password:</label>
-        <asp:TextBox id="password" runat="server" TextMode="Password"></asp:TextBox><br />
+            <asp:Button ID="signIn" runat="server" CssClass="btn btn-block" OnClick="signIn_Click" Text="Sign In" />
+            <asp:Button ID="signUp" runat="server" OnClick="signUp_Click" Text="Sign Up" CssClass="btn btn-success btn-block" /><br />
 
-        <asp:Button ID="signIn" runat="server" OnClick="signIn_Click" Text="Sign In"/>
-        <label>or</label>
-        <asp:Button ID="signUp" runat="server" OnClick="signUp_Click" Text="Sign Up"/><br />
-
-        <asp:Button ID="discover" runat="server" OnClick="discover_Click" Text="Discover"/>
-    </form>
-</body>
-</html>
+            <asp:Button ID="discover" runat="server" OnClick="discover_Click" Text="Discover" CssClass="btn btn-info btn-block" />
+        </form>
+    </div>
+</asp:Content>
