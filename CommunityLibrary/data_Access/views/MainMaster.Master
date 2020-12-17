@@ -21,7 +21,7 @@
             <li id="home"><a href="Welcome.aspx" >home</a></li>
             <% if (Session["user-id"] != null)
                { %>
-                <li><a href="Welcome.aspx?logout=logout&msg=2"></a></li>
+                <li><a href="Welcome.aspx?logout=logout&msg=2">Log Out</a></li>
                 <li><a href="SearchBook.aspx">Search Book</a></li>
                 <li><a href="OfferBook.aspx">Offer Book</a></li>
                 <li><a href="MyBooks.aspx">My Books</a></li>

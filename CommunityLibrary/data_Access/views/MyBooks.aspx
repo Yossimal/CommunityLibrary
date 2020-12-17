@@ -1,13 +1,7 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="MyBooks.aspx.cs" Inherits="data_Access.views.MyBooks" %>
+﻿<%@ Page Language="C#" MasterPageFile="~/views/MainMaster.Master" AutoEventWireup="true" CodeBehind="MyBooks.aspx.cs" Inherits="data_Access.views.MyBooks" %>
 
-<!DOCTYPE html>
-
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
-    <title></title>
-</head>
-<body>
-    <form id="form1" runat="server">
+<asp:Content ContentPlaceHolderID="Body" runat="server">
+    <form id="form1" runat="server" class="form-group">
         <asp:Panel ID="tablePanel" runat="server">
             <table class="table table-bordered">
                 <tr>
@@ -26,5 +20,4 @@
             <label> to offer a book.</label>
         </asp:Panel>
     </form>
-</body>
-</html>
+</asp:Content>
