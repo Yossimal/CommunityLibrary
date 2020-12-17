@@ -43,6 +43,7 @@ namespace data_Access.views
             toAdd.OfferUser = user;
             toAdd.DaysForGive = int.Parse(timeToProvide.Value);
             toAdd.DaysForReturn = int.Parse(timeToReturn.Value);
+            toAdd.StatusDescription = statusDescription.Value;
             ContextSingelton.Context.Offers.Add(toAdd);
             ContextSingelton.Context.SaveChanges();
 
